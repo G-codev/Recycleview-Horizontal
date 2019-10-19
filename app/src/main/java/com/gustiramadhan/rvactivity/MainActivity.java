@@ -7,6 +7,7 @@ import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
+import android.content.Intent;
 import android.os.Bundle;
 
 import com.android.volley.Request;
@@ -46,6 +47,15 @@ public class MainActivity extends AppCompatActivity {
         rvPlayer.setLayoutManager(lm);
         rvPlayer.setAdapter(adapter);
         rvPlayer.addItemDecoration(divider);
+
+        adapter.setListener(new OnClickListener() {
+            @Override
+            public void aksiKlik(int Position) {
+                Intent intent = new Intent(MainActivity.this, DetailActivity.class);
+                startActivity(intent);
+
+            }
+        });
 
 
     }
