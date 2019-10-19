@@ -2,8 +2,10 @@ package com.gustiramadhan.rvactivity;
 
 import androidx.appcompat.app.AppCompatActivity;
 import androidx.recyclerview.widget.DividerItemDecoration;
+import androidx.recyclerview.widget.GridLayoutManager;
 import androidx.recyclerview.widget.LinearLayoutManager;
 import androidx.recyclerview.widget.RecyclerView;
+import androidx.recyclerview.widget.StaggeredGridLayoutManager;
 
 import android.os.Bundle;
 
@@ -20,6 +22,7 @@ import java.util.ArrayList;
 public class MainActivity extends AppCompatActivity {
 
     private RecyclerView rvPlayer;
+
     private PlayerAdapter adapter;
     private ArrayList<Player> players;
     private Gson gson;
@@ -37,10 +40,14 @@ public class MainActivity extends AppCompatActivity {
         ambilData();
 
         LinearLayoutManager lm = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
+        GridLayoutManager gridLayoutManager = new GridLayoutManager(this,2);
+        StaggeredGridLayoutManager lm3 = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         DividerItemDecoration divider = new DividerItemDecoration(this, lm.getOrientation());
-        rvPlayer.setLayoutManager(lm);
+        rvPlayer.setLayoutManager(lm3);
         rvPlayer.setAdapter(adapter);
         rvPlayer.addItemDecoration(divider);
+
+
     }
 
     public void ambilData(){
