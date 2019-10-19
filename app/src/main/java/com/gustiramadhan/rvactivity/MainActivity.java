@@ -43,7 +43,7 @@ public class MainActivity extends AppCompatActivity {
         GridLayoutManager gridLayoutManager = new GridLayoutManager(this,2);
         StaggeredGridLayoutManager lm3 = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
         DividerItemDecoration divider = new DividerItemDecoration(this, lm.getOrientation());
-        rvPlayer.setLayoutManager(lm3);
+        rvPlayer.setLayoutManager(lm);
         rvPlayer.setAdapter(adapter);
         rvPlayer.addItemDecoration(divider);
 
