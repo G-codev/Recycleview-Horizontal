@@ -1,3 +1,5 @@
 <resources>
     <string name="app_name">RVActivity</string>
+
+    <string name="detail">About Player</string>
 </resources>

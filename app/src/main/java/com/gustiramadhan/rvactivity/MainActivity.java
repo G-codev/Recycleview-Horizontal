@@ -41,10 +41,10 @@ public class MainActivity extends AppCompatActivity {
         ambilData();
 
         LinearLayoutManager lm = new LinearLayoutManager(this, LinearLayoutManager.HORIZONTAL, false);
-        GridLayoutManager gridLayoutManager = new GridLayoutManager(this,2);
-        StaggeredGridLayoutManager lm3 = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.VERTICAL);
+     GridLayoutManager gridLayoutManager = new GridLayoutManager(this,2);
+    StaggeredGridLayoutManager lm3 = new StaggeredGridLayoutManager(2, StaggeredGridLayoutManager.HORIZONTAL);
         DividerItemDecoration divider = new DividerItemDecoration(this, lm.getOrientation());
-        rvPlayer.setLayoutManager(lm);
+        rvPlayer.setLayoutManager(gridLayoutManager);
         rvPlayer.setAdapter(adapter);
         rvPlayer.addItemDecoration(divider);
 
@@ -52,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
             @Override
             public void aksiKlik(int Position) {
                 Intent intent = new Intent(MainActivity.this, DetailActivity.class);
+                intent.putExtra("idPlayer", players.get(Position).getIdPlayer());
                 startActivity(intent);
 
             }
